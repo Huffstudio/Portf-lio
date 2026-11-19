@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huff Studio · Sites imersivos</title>
+<meta name="description" content="Huff Studio cria sites imersivos para incorporadoras, indústrias, agro e energia. 3D, movimento e o mesmo cuidado no celular.">
+<meta name="theme-color" content="#0C0A09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235A1D16'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' fill='%23ECE6DF' text-anchor='middle'%3EH.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="is-loading">
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__name" id="loaderName">
+    <span class="lm"><span>H</span></span><span class="lm"><span>u</span></span><span class="lm"><span>f</span></span><span class="lm"><span>f</span></span><span class="lm dot"><span>.</span></span>
+  </div>
+  <div class="loader__count">
+    <p class="loader__caption" id="loaderCaption"></p>
+    <div class="odo" id="odo"><span class="odo__mask"><span class="odo__digits" id="odoDigits"></span><span class="odo__pct">%</span></span></div>
+  </div>
+  <button class="loader__skip" id="skip" type="button" aria-label="Pular abertura">↗</button>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label" id="cursorLabel">Ver</span></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <a href="#topo" class="nav__mark" aria-label="Huff Studio, voltar ao topo"><span class="wmFirst" id="wmFirst">Huff</span><span class="wmRest">&nbsp;Studio</span></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#trabalhos">Trabalhos</a><span>/</span><a href="#projetos">Projetos</a><span>/</span><a href="#estudio">Estúdio</a><span>/</span><a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="hero__stack" id="heroStack" aria-hidden="true"></div>
+  <h1 class="hero__title">
+    <span class="hl hl--1"><span class="w">Olá,</span> <span class="w">somos</span> <span class="w">a</span></span>
+    <span class="hl hl--2"><span class="w">Huff</span></span>
+    <span class="hl hl--3"><span class="w">Studio</span></span>
+  </h1>
+  <div class="hero__foot">
+    <span>Huff Studio</span>
+    <span class="hero__claim">Sites imersivos para marcas<br>que querem ser lembradas</span>
+    <span id="heroYear">©2026</span>
+  </div>
+  <a href="#trabalhos" class="hero__down" aria-label="Ver trabalhos"><span>Role</span><i></i></a>
+</section>
+
+<!-- ================= ANEL DE TRABALHOS ================= -->
+<section class="ring" id="trabalhos">
+  <div class="ring__sticky">
+    <div class="ring__top">
+      <p class="sentence" id="sentence">
+        Criamos sites para <a class="choice" data-sector="imob" href="#projetos"><i class="mk"></i><span class="cw">incorporadoras,</span><sup>01</sup><i class="ul"></i></a><br class="br">
+        <a class="choice" data-sector="ind" href="#projetos"><i class="mk"></i><span class="cw">indústrias</span><sup>02</sup><i class="ul"></i></a> e para quem vive do <br class="br">
+        <a class="choice" data-sector="campo" href="#projetos"><i class="mk"></i><span class="cw">campo e da energia.</span><sup>03</sup><i class="ul"></i></a>
+      </p>
+      <dl class="stats">
+        <div><dt><span class="num" data-to="6">06</span></dt><dd>Projetos</dd></div>
+        <div><dt><span class="num" data-to="4">04</span></dt><dd>Setores</dd></div>
+        <div><dt><span class="num" data-to="100">100</span>%</dt><dd>Sob medida</dd></div>
+      </dl>
+    </div>
+
+    <div class="world" id="world">
+      <canvas class="silk" id="silk" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="motes" id="motes" aria-hidden="true"></div>
+      <div class="wall" id="wall" aria-label="Anel de trabalhos: arraste para girar">
+        <div class="lens" id="lens"><div class="center" id="center"></div></div>
+      </div>
+      <div class="mist" aria-hidden="true"></div>
+      <p class="world__hint" aria-hidden="true"><span>Arraste</span> ou role para girar</p>
+    </div>
+  </div>
+</section>
+
+<div class="preview" id="preview" aria-hidden="true">
+  <div class="preview__card" id="previewCard">
+    <div class="preview__media" id="previewMedia"></div>
+    <div class="preview__meta"><b id="previewLabel"></b><p id="previewBlurb"></p></div>
+  </div>
+</div>
+
+<!-- ================= GALERIA (celular) ================= -->
+<section class="gallery" id="galeria">
+  <div class="gallery__head">
+    <p class="kicker">No celular, o mesmo cuidado</p>
+    <div class="gallery__arrows">
+      <button type="button" class="arw" id="gPrev" aria-label="Anterior">←</button>
+      <button type="button" class="arw" id="gNext" aria-label="Próximo">→</button>
+    </div>
+  </div>
+  <div class="gallery__track" id="gTrack"></div>
+  <div class="bigbar">
+    <span class="bigbar__n" id="gCount">06</span>
+    <span class="bigbar__t">Trabalhos</span>
+  </div>
+</section>
+
+<!-- ================= PROJETOS (páginas creme) ================= -->
+<section class="projects" id="projetos">
+  <header class="projects__head">
+    <span class="script">Portfólio</span>
+    <h2 class="display"><span class="w">Port</span><br><span class="w">fólio</span></h2>
+    <ol class="toc" id="toc"></ol>
+  </header>
+  <div id="spreads"></div>
+</section>
+
+<!-- ================= ESTÚDIO ================= -->
+<section class="studio" id="estudio">
+  <div class="studio__grid">
+    <div class="studio__letter" aria-hidden="true">E</div>
+    <div class="studio__body">
+      <span class="script script--light">O estúdio</span>
+      <h2 class="studio__title"><span class="w">Um</span> <span class="w">site</span> <span class="w">por</span> <span class="w">vez,</span><br><span class="w">feito</span> <span class="w">do</span> <span class="w">zero.</span></h2>
+      <p class="studio__text reveal">A Huff Studio nasceu dentro do mercado imobiliário, de quem vende imóvel e sabe que o cliente decide pelo que sente. Por isso nenhum site sai de template: cada um é desenhado para a marca, com 3D, movimento e imagem grande, e funciona tão bem no celular quanto no computador.</p>
+    </div>
+  </div>
+  <ol class="steps">
+    <li class="reveal"><span class="steps__n">1</span><h3>Imersão</h3><p>Entendemos o produto, o cliente e o que precisa ser sentido em cinco segundos.</p></li>
+    <li class="reveal"><span class="steps__n">2</span><h3>Direção</h3><p>Paleta, tipografia e a ideia que vai prender a atenção: uma planta 3D, um vidro que quebra, um avião que voa.</p></li>
+    <li class="reveal"><span class="steps__n">3</span><h3>Construção</h3><p>Código feito à mão, rápido e leve, testado em tela de computador e de celular.</p></li>
+    <li class="reveal"><span class="steps__n">4</span><h3>No ar</h3><p>Publicamos, acompanhamos e ajustamos. O site continua evoluindo com a marca.</p></li>
+  </ol>
+  <div class="swatches reveal" aria-label="Paleta da casa">
+    <span style="--c:#5A1D16"><i>Vinho</i></span><span style="--c:#B5552F"><i>Terracota</i></span><span style="--c:#4B4A33"><i>Oliva</i></span><span style="--c:#C9A36A"><i>Areia</i></span><span style="--c:#ECE6DF"><i>Creme</i></span>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="contact" id="contato">
+  <h2 class="contact__title" aria-label="Contato"><span class="contact__c" aria-hidden="true">C</span><span class="contact__rest" aria-hidden="true">ontato</span></h2>
+  <form class="brief" id="brief" novalidate>
+    <p class="kicker">Conte o que você está criando</p>
+    <p class="brief__sentence">
+      Sou da <input id="bWho" type="text" placeholder="nome da empresa" size="16" aria-label="Nome da empresa"><span>,</span><br class="br">
+      preciso de <input id="bWhat" type="text" placeholder="um site de lançamento" size="20" aria-label="O que você precisa"><br class="br">
+      e quero no ar
+      <span class="when" role="radiogroup" aria-label="Prazo">
+        <button type="button" role="radio" aria-checked="true" data-v="em 30 dias">em 30 dias</button> /
+        <button type="button" role="radio" aria-checked="false" data-v="até o lançamento">até o lançamento</button> /
+        <button type="button" role="radio" aria-checked="false" data-v="sem pressa">sem pressa</button></span>.
+    </p>
+    <p class="kicker brief__note">Vai para <span id="mailShow"></span>. Respondemos pessoalmente.</p>
+    <div class="brief__actions">
+      <button type="button" class="ghost" id="bCopy" aria-label="Copiar mensagem"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></button>
+      <button type="submit" class="send magnetic">Enviar para a Huff ↗</button>
+      <span class="brief__ok" id="bOk" role="status"></span>
+    </div>
+  </form>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot__big" aria-hidden="true">Huff Studio</div>
+  <div class="foot__row">
+    <span>Huff Studio</span>
+    <span id="footCity"></span>
+    <a href="#topo">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/silk.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
