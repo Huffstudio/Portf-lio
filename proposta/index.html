@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta · Norte Estúdio</title>
+<meta name="description" content="Proposta comercial da Norte Estúdio: site sob medida em 30 dias.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C0A09'/%3E%3Cpolygon points='16,4 21,16 11,16' fill='%23B5552F'/%3E%3Cpolygon points='11,16 21,16 16,28' fill='%23ECE6DF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter+Tight:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+/* Proposta em páginas A4. Tudo dentro da página é medido em "mm de página" (--m),
+   então a mesma página serve para tela, celular e PDF. */
+:root{
+  --carvao:#0C0A09; --vinho:#5A1D16; --vinho-2:#7A2B1F; --terracota:#B5552F;
+  --areia:#C9A36A; --oliva:#4B4A33; --creme:#ECE6DF; --creme-2:#E2DAD1;
+  --tinta:#1E1714; --tinta-2:#5a4d46; --suave:#B6A99F; --mudo:#8a7d76;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --script:"Pinyon Script", cursive;
+}
+*{box-sizing:border-box}
+html{background:#221c19}
+body{margin:0;font-family:var(--sans);font-weight:300;color:var(--tinta);-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.doc{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.page{width:min(210mm,100%);aspect-ratio:210/297;container-type:inline-size;overflow:hidden;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.pi{--m:calc(100cqw / 210);position:absolute;inset:0;padding:calc(16*var(--m)) calc(16*var(--m)) calc(14*var(--m));display:flex;flex-direction:column}
+.dark{background:var(--carvao);color:var(--creme)}
+.cream{background:var(--creme);color:var(--tinta)}
+.wine{background:var(--vinho);color:var(--creme)}
+
+/* elementos comuns */
+.top{display:flex;justify-content:space-between;align-items:center;gap:calc(4*var(--m))}
+.brand{display:flex;align-items:center;gap:calc(2.2*var(--m));font-family:var(--serif);font-size:calc(6*var(--m));line-height:1}
+.brand svg{width:calc(2.4*var(--m));height:calc(6*var(--m))}
+.lbl{font-family:var(--mono);font-size:calc(2.2*var(--m));letter-spacing:.16em;text-transform:uppercase;margin:0;opacity:.72}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:calc(4*var(--m));border-top:1px solid currentColor;border-color:rgba(127,112,104,.28)}
+h2{font-family:var(--serif);font-weight:400;font-size:calc(15*var(--m));line-height:.96;letter-spacing:-.015em;margin:calc(5*var(--m)) 0 calc(5*var(--m))}
+h3{font-family:var(--mono);font-weight:500;font-size:calc(2.3*var(--m));letter-spacing:.14em;text-transform:uppercase;margin:0 0 calc(1.5*var(--m))}
+p{margin:0}
+.txt{font-size:calc(3.5*var(--m));line-height:1.6}
+.cream .txt{color:var(--tinta-2)}
+.dark .txt{color:var(--suave)}
+.wine .txt{color:#e8d5cc}
+.script{font-family:var(--script);color:var(--areia);line-height:1}
+
+/* 1 · capa */
+.cover::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 55% at 85% 35%,rgba(122,43,31,.6),transparent 70%),radial-gradient(50% 40% at 0% 100%,rgba(75,74,51,.35),transparent 70%)}
+.cover .pi{z-index:1}
+.cover .needle{position:absolute;right:calc(22*var(--m));top:calc(52*var(--m));width:calc(26*var(--m));height:calc(65*var(--m));color:var(--creme)}
+.cover .script{font-size:calc(17*var(--m));margin-top:auto;transform:rotate(-4deg);transform-origin:left;margin-bottom:calc(-1*var(--m))}
+.cover h1{margin:0;font-family:var(--sans);font-weight:200;text-transform:uppercase;font-size:calc(27*var(--m));line-height:.9;letter-spacing:-.055em}
+.cover h1 span{color:var(--terracota);display:block}
+.cover .sub{font-family:var(--serif);font-size:calc(6.5*var(--m));line-height:1.2;margin:calc(7*var(--m)) 0 calc(10*var(--m));color:var(--creme);max-width:22ch}
+.cover .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(4*var(--m));padding-top:calc(4*var(--m));border-top:1px solid rgba(236,230,223,.2)}
+.cover .meta b{display:block;text-transform:none;letter-spacing:0;font-family:var(--serif);font-weight:400;font-size:calc(4.6*var(--m));margin-top:calc(1.2*var(--m));opacity:1}
+
+/* 2 · apresentação */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:calc(6*var(--m)) calc(10*var(--m));margin-top:calc(2*var(--m))}
+.intro-grid>div{border-top:1px solid rgba(30,23,20,.16);padding-top:calc(3.5*var(--m))}
+.intro-grid b{font-family:var(--serif);font-weight:500;font-size:calc(5.6*var(--m));display:block;line-height:1.1;margin-bottom:calc(1.6*var(--m))}
+.intro-grid p{font-size:calc(3.2*var(--m));line-height:1.55;color:var(--tinta-2)}
+.phones{display:grid;grid-template-columns:repeat(6,1fr);gap:calc(3*var(--m));margin-top:auto;padding-top:calc(8*var(--m))}
+.phones img{width:100%;aspect-ratio:600/1100;object-fit:cover;object-position:top;border-radius:calc(2.4*var(--m));box-shadow:0 0 0 calc(1*var(--m)) var(--carvao),0 calc(4*var(--m)) calc(8*var(--m)) calc(-3*var(--m)) rgba(0,0,0,.5);display:block}
+.phones-cap{font-family:var(--mono);font-size:calc(2*var(--m));letter-spacing:.12em;text-transform:uppercase;color:var(--mudo);margin-top:calc(3*var(--m))}
+
+/* 3-5 · portfólio */
+.proj{display:flex;flex-direction:column;gap:calc(3.2*var(--m))}
+.proj+.proj{margin-top:calc(8*var(--m));padding-top:calc(7*var(--m));border-top:1px solid rgba(127,112,104,.28)}
+.ph{display:flex;align-items:baseline;gap:calc(4*var(--m))}
+.ph .n{font-family:var(--serif);font-weight:300;font-size:calc(13*var(--m));line-height:.8;color:var(--terracota)}
+.ph h4{font-family:var(--serif);font-weight:400;font-size:calc(8*var(--m));line-height:1;margin:0;flex:1}
+.ph .lbl{text-align:right}
+.shots{display:grid;grid-template-columns:1.25fr 1fr;gap:calc(3*var(--m));align-items:end}
+.shots img{width:100%;display:block;border-radius:calc(1.2*var(--m));aspect-ratio:16/10;object-fit:cover;object-position:top;box-shadow:0 calc(3*var(--m)) calc(7*var(--m)) calc(-3*var(--m)) rgba(0,0,0,.55)}
+.pt{display:grid;grid-template-columns:1fr 1.15fr;gap:calc(7*var(--m))}
+.pt .txt{font-size:calc(3.2*var(--m));line-height:1.55}
+.best{list-style:none;margin:0;padding:0;display:grid;gap:calc(1.6*var(--m))}
+.best li{display:grid;grid-template-columns:calc(5*var(--m)) 1fr;font-size:calc(3*var(--m));line-height:1.4}
+.best li::before{content:"";width:calc(2.2*var(--m));height:calc(2.2*var(--m));border-radius:50%;background:var(--terracota);margin-top:calc(.9*var(--m))}
+.best b{font-weight:500}
+.link{font-family:var(--mono);font-size:calc(2.2*var(--m));letter-spacing:.08em;color:var(--terracota);margin-top:calc(2.4*var(--m));word-break:break-all}
+.dark .best li{color:var(--creme)}
+.dark .link{color:var(--areia)}
+
+/* 6 · escopo */
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:0 calc(9*var(--m));margin-top:calc(2*var(--m))}
+.scope>div{padding:calc(5.6*var(--m)) 0;border-top:1px solid rgba(236,230,223,.16);display:grid;grid-template-columns:calc(9*var(--m)) 1fr}
+.scope .k{font-family:var(--serif);font-size:calc(7*var(--m));line-height:.9;color:var(--areia)}
+.scope b{display:block;font-family:var(--serif);font-weight:400;font-size:calc(5.2*var(--m));line-height:1.1;margin-bottom:calc(1.2*var(--m))}
+.scope p{font-size:calc(3*var(--m));line-height:1.5;color:var(--suave)}
+.not{margin-top:auto;padding:calc(5*var(--m));border-radius:calc(2*var(--m));box-shadow:inset 0 0 0 1px rgba(236,230,223,.18)}
+.not p{font-size:calc(3*var(--m));line-height:1.6;color:var(--suave)}
+
+/* 7 · prazo */
+.tl{margin-top:calc(4*var(--m))}
+.tl-marks{position:relative;height:calc(12*var(--m))}
+.tl-marks span{position:absolute;bottom:0;transform:translateX(-50%);font-family:var(--mono);font-size:calc(2.1*var(--m));letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:calc(1.4*var(--m))}
+.tl-marks span::after{content:"";width:calc(3*var(--m));height:calc(3*var(--m));transform:rotate(45deg);background:var(--creme)}
+.tl-marks span.end::after{background:var(--terracota)}
+.tl-marks span:first-child{transform:none;align-items:flex-start}
+.tl-marks span.end{transform:translateX(-100%);align-items:flex-end}
+.tl-bar{display:flex;height:calc(13*var(--m));border-radius:calc(1.5*var(--m));overflow:hidden;margin-top:calc(2*var(--m))}
+.tl-bar div{display:flex;flex-direction:column;justify-content:center;padding:0 calc(3*var(--m));font-family:var(--mono);font-size:calc(2.2*var(--m));letter-spacing:.1em;text-transform:uppercase}
+.tl-bar small{font-family:var(--sans);text-transform:none;letter-spacing:0;font-size:calc(2.6*var(--m));opacity:.8;margin-top:calc(.6*var(--m))}
+.tl-days{display:flex;justify-content:space-between;font-family:var(--mono);font-size:calc(2.1*var(--m));letter-spacing:.1em;color:#dcc4ba;margin-top:calc(2.4*var(--m));position:relative;height:calc(4*var(--m))}
+.tl-days span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.tl-days span:first-child{transform:none}
+.tl-days span:last-child{transform:translateX(-100%)}
+.steps{display:grid;gap:0;margin-top:calc(10*var(--m))}
+.steps>div{display:grid;grid-template-columns:calc(14*var(--m)) 1fr;padding:calc(5*var(--m)) 0;border-top:1px solid rgba(236,230,223,.2)}
+.steps .k{font-family:var(--serif);font-size:calc(10*var(--m));line-height:.8;color:var(--areia)}
+.steps b{display:block;font-family:var(--serif);font-weight:400;font-size:calc(5.6*var(--m));line-height:1.1;margin-bottom:calc(1.2*var(--m))}
+.steps p{font-size:calc(3.1*var(--m));line-height:1.5;color:#e8d5cc}
+.steps .when{font-family:var(--mono);font-size:calc(2.1*var(--m));letter-spacing:.12em;text-transform:uppercase;color:var(--areia);display:block;margin-bottom:calc(1.2*var(--m))}
+
+/* 8 · investimento */
+.price{display:grid;gap:0;margin-top:calc(1*var(--m))}
+.price>div{display:flex;justify-content:space-between;align-items:baseline;gap:calc(4*var(--m));padding:calc(4.4*var(--m)) 0;border-top:1px solid rgba(30,23,20,.16)}
+.price>div:last-child{border-bottom:1px solid rgba(30,23,20,.16)}
+.price span{font-family:var(--mono);font-size:calc(2.4*var(--m));letter-spacing:.12em;text-transform:uppercase}
+.price span small{display:block;font-family:var(--sans);text-transform:none;letter-spacing:0;font-size:calc(2.9*var(--m));color:var(--tinta-2);margin-top:calc(1*var(--m))}
+.price b{font-family:var(--serif);font-weight:400;font-size:calc(11*var(--m));line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price b small{font-size:.42em;color:var(--mudo)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(8*var(--m));margin-top:calc(9*var(--m))}
+.ul li{font-size:calc(3.3*var(--m))!important}
+.need{margin-top:auto;padding:calc(5.5*var(--m)) calc(6*var(--m));border-radius:calc(2*var(--m));background:rgba(0,0,0,.2);box-shadow:inset 0 0 0 1px rgba(236,230,223,.18)}
+.need ul{list-style:none;margin:calc(2*var(--m)) 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:calc(2.4*var(--m)) calc(6*var(--m))}
+.need li{font-size:calc(3.1*var(--m));color:#e8d5cc;display:flex;gap:calc(2.4*var(--m));align-items:center}
+.need li::before{content:"";flex:none;width:calc(3*var(--m));height:calc(3*var(--m));border:1px solid var(--areia);border-radius:calc(.6*var(--m))}
+.ul{list-style:none;margin:0;padding:0;display:grid;gap:calc(1.8*var(--m))}
+.ul li{font-size:calc(3*var(--m));line-height:1.45;color:var(--tinta-2);padding-left:calc(4.5*var(--m));position:relative}
+.ul li::before{content:"";position:absolute;left:0;top:calc(1.5*var(--m));width:calc(2.2*var(--m));height:1px;background:var(--terracota)}
+.host{margin-top:auto;background:var(--carvao);color:var(--creme);border-radius:calc(2*var(--m));padding:calc(5.5*var(--m)) calc(6*var(--m))}
+.host h3{color:var(--areia)}
+.host table{width:100%;border-collapse:collapse;margin-top:calc(2*var(--m))}
+.host td{padding:calc(2.6*var(--m)) 0;border-top:1px solid rgba(236,230,223,.16);font-size:calc(3*var(--m));vertical-align:top}
+.host td:first-child{font-family:var(--serif);font-size:calc(4.4*var(--m))}
+.host td:last-child{text-align:right;font-family:var(--mono);font-size:calc(2.6*var(--m));letter-spacing:.04em;white-space:nowrap;color:var(--areia)}
+.host td small{display:block;font-family:var(--sans);font-size:calc(2.7*var(--m));color:var(--suave);margin-top:calc(.6*var(--m))}
+.host .note{font-size:calc(2.7*var(--m));line-height:1.5;color:var(--suave);margin-top:calc(3*var(--m))}
+
+/* 9 · condições e aceite */
+.cond{display:grid;gap:0}
+.cond>div{display:grid;grid-template-columns:calc(42*var(--m)) 1fr;gap:calc(4*var(--m));padding:calc(3.4*var(--m)) 0;border-top:1px solid rgba(236,230,223,.16)}
+.cond h3{margin:0;color:var(--areia);padding-top:calc(.6*var(--m))}
+.cond p{font-size:calc(3.1*var(--m));line-height:1.5;color:var(--suave)}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:calc(10*var(--m));margin-top:auto}
+.sign div{border-top:1px solid rgba(236,230,223,.5);padding-top:calc(2.6*var(--m))}
+.sign b{display:block;font-family:var(--serif);font-weight:400;font-size:calc(5*var(--m))}
+.sign span{font-family:var(--mono);font-size:calc(2.1*var(--m));letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.close{font-family:var(--serif);font-size:calc(7.5*var(--m));line-height:1.1;margin:calc(10*var(--m)) 0 calc(12*var(--m))}
+.close span{color:var(--terracota)}
+
+/* impressão / PDF */
+@page{size:A4;margin:0}
+@media print{
+  html,body{background:none}
+  .doc{display:block;padding:0}
+  .page{width:210mm;height:297mm;aspect-ratio:auto;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="needle" viewBox="0 0 40 100"><polygon points="20,0 31,50 9,50" fill="#B5552F"/><polygon points="9,50 31,50 20,100" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<main class="doc">
+
+<!-- ============ 1 · CAPA ============ -->
+<section class="page dark cover" aria-label="Capa">
+  <div class="pi">
+    <svg class="needle" viewBox="0 0 40 100" aria-hidden="true"><use href="#needle"/></svg>
+    <div class="top">
+      <div class="brand"><svg aria-hidden="true"><use href="#needle"/></svg>Norte Estúdio</div>
+      <p class="lbl">Proposta Nº 001 / 2026</p>
+    </div>
+    <div class="script">Proposta</div>
+    <h1>Site sob<span>medida</span></h1>
+    <p class="sub">Todo projeto precisa de um norte.</p>
+    <div class="meta">
+      <p class="lbl">Para<b>[Nome do cliente]</b></p>
+      <p class="lbl">Data<b>Novembro de 2026</b></p>
+      <p class="lbl">Validade<b>15 dias</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · QUEM SOMOS ============ -->
+<section class="page cream" aria-label="Quem somos">
+  <div class="pi">
+    <div class="top"><p class="lbl">01 · Quem somos</p><div class="brand" style="font-size:calc(4.4*var(--m))"><svg aria-hidden="true" style="width:calc(1.8*var(--m));height:calc(4.4*var(--m));color:var(--tinta)"><use href="#needle"/></svg>Norte</div></div>
+    <h2>Sites que mostram para onde a sua empresa vai.</h2>
+    <p class="txt" style="max-width:60ch">A Norte Estúdio cria sites sob medida para empresas que querem ser lembradas. Cada projeto é desenhado do zero: nada de modelo pronto. O resultado é um site bonito, rápido e fácil de usar, que funciona igual no celular e no computador.</p>
+    <div class="intro-grid" style="margin-top:calc(9*var(--m))">
+      <div><b>Design exclusivo</b><p>Cores, letras e fotos escolhidas para a sua marca. O site não se parece com nenhum outro.</p></div>
+      <div><b>Feito para o celular</b><p>A maioria dos seus clientes vai abrir o site pelo celular. Cada tela é pensada para isso.</p></div>
+      <div><b>Conteúdo que vende</b><p>Textos curtos, imagens grandes e botões claros para o cliente entrar em contato.</p></div>
+      <div><b>Um destaque que marca</b><p>Cada site tem um momento que ninguém esquece: um tour, um mapa, uma animação, um catálogo.</p></div>
+    </div>
+    <div class="phones">
+      <img src="../assets/img/altavera-m.webp" alt="Altavera no celular">
+      <img src="../assets/img/huff-m.webp" alt="Huff Empreendimentos no celular">
+      <img src="../assets/img/marble-m.webp" alt="VEIO no celular">
+      <img src="../assets/img/vidros-m.webp" alt="Vidros e Esquadrias no celular">
+      <img src="../assets/img/sorriso-m.webp" alt="Sorriso Aviação Agrícola no celular">
+      <img src="../assets/img/soltury-m.webp" alt="Soltury no celular">
+    </div>
+    <p class="phones-cap">Seis sites da Norte, como aparecem no celular</p>
+  </div>
+</section>
+
+<!-- ============ 3 · PORTFÓLIO (1/3) ============ -->
+<section class="page cream" aria-label="Portfólio, parte 1">
+  <div class="pi">
+    <div class="top"><p class="lbl">02 · Portfólio</p><p class="lbl">Imobiliário</p></div>
+    <article class="proj" style="margin-top:calc(7*var(--m))">
+      <div class="ph"><span class="n">01</span><h4>Altavera Residence</h4><p class="lbl">Site de lançamento</p></div>
+      <div class="shots"><img src="../assets/img/altavera.webp" alt="Tela inicial do Altavera"><img src="../assets/img/altavera-2.webp" alt="Mapa da região do Altavera"></div>
+      <div class="pt">
+        <div><p class="txt">Duas torres de alto padrão apresentadas como uma visita ao decorado, do terreno até a reserva da unidade.</p><p class="link">huffstudio.github.io/Site-APR/altavera</p></div>
+        <ul class="best">
+          <li><span><b>Mapa da região</b> com padaria, escola e hospital a poucos minutos.</span></li>
+          <li><span><b>Passeio pelos ambientes</b> com fotos que trocam sozinhas.</span></li>
+          <li><span><b>Plantas dos apartamentos</b> para comparar metragens.</span></li>
+          <li><span><b>Espelho de vendas</b> e reserva direto no site.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="ph"><span class="n">02</span><h4>Huff Empreendimentos</h4><p class="lbl">Site institucional</p></div>
+      <div class="shots"><img src="../assets/img/huff.webp" alt="Tela inicial da Huff"><img src="../assets/img/huff-2.webp" alt="História da Huff"></div>
+      <div class="pt">
+        <div><p class="txt">Página de construtora que passa solidez: a história da empresa, os números e os empreendimentos em um só lugar.</p><p class="link">huffstudio.github.io/Site-APR</p></div>
+        <ul class="best">
+          <li><span><b>Linha do tempo</b> contando duas décadas de história.</span></li>
+          <li><span><b>Números da empresa</b> em destaque: anos, obras, cidades.</span></li>
+          <li><span><b>Empreendimentos</b> que abrem dentro da própria página.</span></li>
+          <li><span><b>Fundo de seda animada</b> que dá o tom de alto padrão.</span></li>
+        </ul>
+      </div>
+    </article>
+    <div class="foot"><p class="lbl">Norte Estúdio</p><p class="lbl">3</p></div>
+  </div>
+</section>
+
+<!-- ============ 4 · PORTFÓLIO (2/3) ============ -->
+<section class="page dark" aria-label="Portfólio, parte 2">
+  <div class="pi">
+    <div class="top"><p class="lbl">02 · Portfólio</p><p class="lbl">Indústria</p></div>
+    <article class="proj" style="margin-top:calc(7*var(--m))">
+      <div class="ph"><span class="n">03</span><h4>VEIO · Atelier de Mármores</h4><p class="lbl">Site de catálogo</p></div>
+      <div class="shots"><img src="../assets/img/marble.webp" alt="Tela inicial do VEIO"><img src="../assets/img/marble-2.webp" alt="Coleção de mármores do VEIO"></div>
+      <div class="pt">
+        <div><p class="txt">Uma marmoraria que mostra a pedra de perto: o cliente escolhe, compara e pede orçamento sem sair do site.</p><p class="link">huffstudio.github.io/Marble</p></div>
+        <ul class="best">
+          <li><span><b>Catálogo com 17 pedras</b> e filtro por família.</span></li>
+          <li><span><b>Ficha técnica</b> de cada pedra, com usos e acabamentos.</span></li>
+          <li><span><b>Tabela de cores</b> do mais claro ao mais escuro.</span></li>
+          <li><span><b>Pedido de orçamento</b> e processo explicado passo a passo.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="ph"><span class="n">04</span><h4>Vidros e Esquadrias</h4><p class="lbl">Site institucional</p></div>
+      <div class="shots"><img src="../assets/img/vidros.webp" alt="Tela inicial de Vidros e Esquadrias"><img src="../assets/img/vidros-2.webp" alt="História da vidraçaria"></div>
+      <div class="pt">
+        <div><p class="txt">Uma vidraçaria de bairro que virou referência, contada com a mesma transparência do material que vende.</p><p class="link">huffstudio.github.io/Vidros</p></div>
+        <ul class="best">
+          <li><span><b>História da família</b> em linha do tempo, de 2007 até hoje.</span></li>
+          <li><span><b>Serviços e obras</b> com fotos de projetos reais.</span></li>
+          <li><span><b>Processo</b> do orçamento à instalação.</span></li>
+          <li><span><b>Abertura em vidro</b> que reage ao mouse.</span></li>
+        </ul>
+      </div>
+    </article>
+    <div class="foot"><p class="lbl">Norte Estúdio</p><p class="lbl">4</p></div>
+  </div>
+</section>
+
+<!-- ============ 5 · PORTFÓLIO (3/3) ============ -->
+<section class="page cream" aria-label="Portfólio, parte 3">
+  <div class="pi">
+    <div class="top"><p class="lbl">02 · Portfólio</p><p class="lbl">Campo e energia</p></div>
+    <article class="proj" style="margin-top:calc(7*var(--m))">
+      <div class="ph"><span class="n">05</span><h4>Sorriso Aviação Agrícola</h4><p class="lbl">Site institucional</p></div>
+      <div class="shots"><img src="../assets/img/sorriso.webp" alt="Tela inicial da Sorriso Aviação"><img src="../assets/img/sorriso-2.webp" alt="Números da Sorriso Aviação"></div>
+      <div class="pt">
+        <div><p class="txt">Aplicação aérea contada com foto de campo, números e a frota em detalhe, para o produtor confiar antes de ligar.</p><p class="link">huffstudio.github.io/Sorriso-avia-o-agr-cola</p></div>
+        <ul class="best">
+          <li><span><b>Números que contam</b> hectares, anos e aeronaves.</span></li>
+          <li><span><b>Frota</b> com tanque, faixa e velocidade de cada avião.</span></li>
+          <li><span><b>Mapa da área atendida</b> no Mato Grosso.</span></li>
+          <li><span><b>Avião que sai da foto</b> e voa com a rolagem.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="ph"><span class="n">06</span><h4>Soltury</h4><p class="lbl">Energia solar</p></div>
+      <div class="shots"><img src="../assets/img/soltury.webp" alt="Soltury à noite"><img src="../assets/img/soltury-2.webp" alt="Soltury de manhã"></div>
+      <div class="pt">
+        <div><p class="txt">Energia solar explicada em um toque: a mesma cena de dia e de noite mostra de onde vem a economia na conta.</p></div>
+        <ul class="best">
+          <li><span><b>Botão Manhã / Noite</b> que explica o produto sem texto longo.</span></li>
+          <li><span><b>Frase principal</b> com a promessa: conta mínima por 25 anos.</span></li>
+          <li><span><b>Chamada para simular</b> a economia logo no topo.</span></li>
+          <li><span><b>Ilustração própria</b> no lugar de banco de imagens.</span></li>
+        </ul>
+      </div>
+    </article>
+    <div class="foot"><p class="lbl">Norte Estúdio</p><p class="lbl">5</p></div>
+  </div>
+</section>
+
+<!-- ============ 6 · ESCOPO ============ -->
+<section class="page dark" aria-label="O que está incluído">
+  <div class="pi">
+    <div class="top"><p class="lbl">03 · O que está incluído</p><p class="lbl">Escopo</p></div>
+    <h2>Seu site pronto, publicado e funcionando.</h2>
+    <div class="scope">
+      <div><span class="k">1</span><div><b>Design exclusivo</b><p>Paleta, letras e direção visual criadas para a marca.</p></div></div>
+      <div><span class="k">2</span><div><b>Celular e computador</b><p>O mesmo cuidado nas duas telas, testado em aparelhos reais.</p></div></div>
+      <div><span class="k">3</span><div><b>Seções combinadas</b><p>Início, sobre, serviços ou produtos, galeria e contato, definidas na Reunião 1.</p></div></div>
+      <div><span class="k">4</span><div><b>Um destaque interativo</b><p>Tour, mapa, catálogo, linha do tempo ou animação: o que fizer sentido para o negócio.</p></div></div>
+      <div><span class="k">5</span><div><b>Formulário de contato</b><p>As mensagens chegam direto no e-mail da empresa.</p></div></div>
+      <div><span class="k">6</span><div><b>Pronto para o Google</b><p>Títulos, descrições e imagem de compartilhamento configurados.</p></div></div>
+      <div><span class="k">7</span><div><b>Publicação completa</b><p>Configuramos domínio e hospedagem no nome do cliente.</p></div></div>
+      <div><span class="k">8</span><div><b>Duas rodadas de ajustes</b><p>Antes da entrega final, para o site sair do jeito certo.</p></div></div>
+    </div>
+    <div class="not"><h3 style="color:var(--areia)">Não está incluído</h3><p>Custos de domínio e hospedagem, fotos ou vídeos profissionais, produção de textos, loja virtual, área de login e gestão de anúncios. Podemos orçar à parte.</p></div>
+  </div>
+</section>
+
+<!-- ============ 7 · PRAZO ============ -->
+<section class="page wine" aria-label="Prazo">
+  <div class="pi">
+    <div class="top"><p class="lbl">04 · Prazo</p><p class="lbl">30 dias</p></div>
+    <h2>No ar em 30 dias.</h2>
+    <p class="txt" style="max-width:56ch">O prazo começa quando recebemos o conteúdo. São duas reuniões para organizar tudo e uma entrega.</p>
+    <div class="tl">
+      <div class="tl-marks"><span style="left:0">Reunião 1</span><span style="left:70%">Reunião 2</span><span class="end" style="left:100%">Site no ar</span></div>
+      <div class="tl-bar">
+        <div style="flex:7;background:var(--carvao)">Semana 1<small>Imersão</small></div>
+        <div style="flex:14;background:var(--vinho-2)">Semanas 2 e 3<small>Construção</small></div>
+        <div style="flex:9;background:var(--terracota)">Semana 4<small>Ajustes</small></div>
+      </div>
+      <div class="tl-days"><span style="left:0">DIA 1</span><span style="left:23.3%">DIA 8</span><span style="left:70%">DIA 22</span><span style="left:100%">DIA 30</span></div>
+    </div>
+    <div class="steps">
+      <div><span class="k">1</span><div><span class="when">Dia 1 · Reunião 1</span><b>Conhecer a empresa</b><p>Definimos as seções, o estilo, a hospedagem e recebemos textos, logo e fotos.</p></div></div>
+      <div><span class="k">2</span><div><span class="when">Dias 2 a 21</span><b>Construir o site</b><p>Criamos o design e o site completo, no computador e no celular.</p></div></div>
+      <div><span class="k">3</span><div><span class="when">Dia 22 · Reunião 2</span><b>Revisar juntos</b><p>Apresentamos o site quase pronto e anotamos os ajustes.</p></div></div>
+      <div><span class="k">4</span><div><span class="when">Até o dia 30</span><b>Publicar</b><p>Fazemos os ajustes, configuramos domínio e hospedagem e colocamos o site no ar.</p></div></div>
+    </div>
+    <div class="need"><h3 style="color:var(--areia)">O que precisamos de você até a Reunião 1</h3>
+      <ul><li>Logo em boa qualidade</li><li>Textos sobre a empresa e os serviços</li><li>Fotos de produtos, obras ou equipe</li><li>Telefone, e-mail e endereço</li><li>Acesso ao domínio, se já tiver</li><li>Sites que você gosta, como referência</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 · INVESTIMENTO ============ -->
+<section class="page cream" aria-label="Investimento">
+  <div class="pi">
+    <div class="top"><p class="lbl">05 · Investimento</p><p class="lbl">Valores</p></div>
+    <h2>Um valor para criar, outro para cuidar.</h2>
+    <div class="price">
+      <div><span>Criação do site<small>Pagamento: 50% na assinatura e 50% na entrega</small></span><b>R$ 2.500</b></div>
+      <div><span>Manutenção mensal<small>A partir do mês seguinte à publicação</small></span><b>R$ 150<small>/mês</small></b></div>
+    </div>
+    <div class="two">
+      <div><h3 style="color:var(--terracota)">A manutenção cobre</h3>
+        <ul class="ul"><li>Pequenas alterações de texto, fotos e contatos</li><li>Acompanhamento para o site seguir no ar</li><li>Atualizações técnicas e cópia de segurança</li><li>Suporte para dúvidas sobre o site</li></ul></div>
+      <div><h3 style="color:var(--terracota)">Fica à parte</h3>
+        <ul class="ul"><li>Seções novas ou mudança grande de layout</li><li>Rodadas de ajustes além das duas incluídas</li><li>Domínio e hospedagem (ao lado)</li></ul></div>
+    </div>
+    <div class="host">
+      <h3>Domínio e hospedagem · no nome do cliente</h3>
+      <table>
+        <tr><td>Domínio .com.br<small>Registro.br · o endereço do site</small></td><td>cerca de R$ 40/ano</td></tr>
+        <tr><td>Hospedagem paga<small>Ex.: Hostinger, HostGator ou Locaweb</small></td><td>cerca de R$ 20 a 50/mês</td></tr>
+        <tr><td>E-mail profissional<small>Opcional, ex.: contato@suaempresa.com.br</small></td><td>conforme o plano</td></tr>
+      </table>
+      <p class="note">Contratados e pagos pelo cliente direto ao fornecedor, então o endereço e o site são sempre seus. A Norte Estúdio indica o plano e faz toda a configuração. Valores aproximados, confirmados na contratação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 · CONDIÇÕES E ACEITE ============ -->
+<section class="page dark" aria-label="Condições e aceite">
+  <div class="pi">
+    <div class="top"><p class="lbl">06 · Condições e aceite</p><div class="brand" style="font-size:calc(4.4*var(--m))"><svg aria-hidden="true" style="width:calc(1.8*var(--m));height:calc(4.4*var(--m))"><use href="#needle"/></svg>Norte</div></div>
+    <h2 style="font-size:calc(13*var(--m))">Combinado assim.</h2>
+    <div class="cond">
+      <div><h3>Conteúdo</h3><p>Textos, logo, fotos e contatos são enviados pelo cliente até a Reunião 1. Atraso no envio adia a entrega pelo mesmo número de dias.</p></div>
+      <div><h3>Ajustes</h3><p>Duas rodadas incluídas. Rodadas extras são orçadas à parte.</p></div>
+      <div><h3>Propriedade</h3><p>Após o pagamento integral, o site é do cliente.</p></div>
+      <div><h3>Manutenção</h3><p>Pode ser cancelada a qualquer momento, com 30 dias de aviso.</p></div>
+      <div><h3>Validade</h3><p>Esta proposta vale por 15 dias a partir da data de envio.</p></div>
+      <div><h3>Próximo passo</h3><p>Aprovação da proposta, pagamento da primeira parcela e agendamento da Reunião 1.</p></div>
+    </div>
+    <p class="close">Vamos dar um <span>norte</span><br>para a sua marca?</p>
+    <div class="sign">
+      <div><b>[Nome do cliente]</b><span>Assinatura e data</span></div>
+      <div><b>Norte Estúdio</b><span>Assinatura e data</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

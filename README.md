@@ -25,3 +25,9 @@ Tudo o que muda fica em **`assets/js/data.js`**:
 - `assets/js/data.js`: projetos e contato
 - `assets/js/silk.js`: seda vinho do fundo do anel
 - `assets/js/main.js`: abertura, anel 3D, galeria, revelações, cursor e formulário
+
+## Proposta comercial (Norte Estúdio)
+- Página: `proposta/index.html` → https://huffstudio.github.io/Portf-lio/proposta/
+- PDF: `proposta/proposta-norte-estudio.pdf` (9 páginas A4)
+- Para gerar o PDF de novo depois de editar: abrir a página no Chrome e salvar como PDF (A4, sem margens, com gráficos de fundo), ou pedir ao Claude.
+- Trocar `[Nome do cliente]` na capa e no aceite a cada proposta.
